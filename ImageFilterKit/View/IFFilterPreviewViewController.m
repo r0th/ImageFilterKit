@@ -7,6 +7,8 @@
 //
 
 #import "IFFilterPreviewViewController.h"
+#import "IFSimpleTintFilter.h"
+#import "IFGreyscaleFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -31,7 +33,7 @@
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", nil];
 	[actionSheet showInView:self.view];
 	[actionSheet release];
 }
@@ -40,14 +42,18 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-	switch (buttonIndex)
+	if(buttonIndex == 0)
 	{
-		case 0:
-			
-			break;
-			
-		default:
-			break;
+		IFSimpleTintFilter *tinter = [[IFSimpleTintFilter alloc] initWithOriginalImage:originalImage];
+		tinter.tintColor = [UIColor redColor];
+		imageView.image = [tinter imageWithFilterApplied];
+		[tinter release];
+	}
+	else if(buttonIndex == 1)
+	{
+		IFGreyscaleFilter *grey = [[IFGreyscaleFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [grey imageWithFilterApplied];
+		[grey release];
 	}
 }
 

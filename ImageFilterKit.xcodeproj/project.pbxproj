@@ -20,6 +20,8 @@
 		1F3A029513423861000E6259 /* IFFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A029413423861000E6259 /* IFFilter.m */; };
 		1F868A5313423FED003B9488 /* IFFilterPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A5113423FED003B9488 /* IFFilterPreviewViewController.m */; };
 		1F868A5413423FED003B9488 /* IFFilterPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F868A5213423FED003B9488 /* IFFilterPreviewViewController.xib */; };
+		1F868A58134247E1003B9488 /* IFSimpleTintFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A57134247E0003B9488 /* IFSimpleTintFilter.m */; };
+		1F868A6913424EDB003B9488 /* IFGreyscaleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A6813424EDB003B9488 /* IFGreyscaleFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,10 @@
 		1F868A5013423FED003B9488 /* IFFilterPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFFilterPreviewViewController.h; path = View/IFFilterPreviewViewController.h; sourceTree = "<group>"; };
 		1F868A5113423FED003B9488 /* IFFilterPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFFilterPreviewViewController.m; path = View/IFFilterPreviewViewController.m; sourceTree = "<group>"; };
 		1F868A5213423FED003B9488 /* IFFilterPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IFFilterPreviewViewController.xib; path = View/IFFilterPreviewViewController.xib; sourceTree = "<group>"; };
+		1F868A56134247E0003B9488 /* IFSimpleTintFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSimpleTintFilter.h; path = Filters/IFSimpleTintFilter.h; sourceTree = "<group>"; };
+		1F868A57134247E0003B9488 /* IFSimpleTintFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFSimpleTintFilter.m; path = Filters/IFSimpleTintFilter.m; sourceTree = "<group>"; };
+		1F868A6713424EDB003B9488 /* IFGreyscaleFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IFGreyscaleFilter.h; sourceTree = "<group>"; };
+		1F868A6813424EDB003B9488 /* IFGreyscaleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IFGreyscaleFilter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,10 @@
 			children = (
 				1F3A029313423861000E6259 /* IFFilter.h */,
 				1F3A029413423861000E6259 /* IFFilter.m */,
+				1F868A56134247E0003B9488 /* IFSimpleTintFilter.h */,
+				1F868A57134247E0003B9488 /* IFSimpleTintFilter.m */,
+				1F868A6713424EDB003B9488 /* IFGreyscaleFilter.h */,
+				1F868A6813424EDB003B9488 /* IFGreyscaleFilter.m */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -213,6 +223,8 @@
 				1F3A02901342381D000E6259 /* UIImage+RawData.m in Sources */,
 				1F3A029513423861000E6259 /* IFFilter.m in Sources */,
 				1F868A5313423FED003B9488 /* IFFilterPreviewViewController.m in Sources */,
+				1F868A58134247E1003B9488 /* IFSimpleTintFilter.m in Sources */,
+				1F868A6913424EDB003B9488 /* IFGreyscaleFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
