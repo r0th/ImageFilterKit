@@ -11,6 +11,7 @@
 #import "IFGreyscaleFilter.h"
 #import "IFPixelationFilter.h"
 #import "IFBrightnessFilter.h"
+#import "IFThermalFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -35,7 +36,7 @@
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Thermal", nil];
 	[actionSheet showInView:self.view];
 	[actionSheet release];
 }
@@ -74,12 +75,18 @@
 		imageView.image = [pixels imageWithFilterApplied];
 		[pixels release];
 	}
-	else
+	else if(buttonIndex == 3)
 	{
 		IFBrightnessFilter *brightness = [[IFBrightnessFilter alloc] initWithOriginalImage:originalImage];
 		brightness.brightnessAdjustment = 100;
 		imageView.image = [brightness imageWithFilterApplied];
 		[brightness release];
+	}
+	else if(buttonIndex == 4)
+	{
+		IFThermalFilter *thermal = [[IFThermalFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [thermal imageWithFilterApplied];
+		[thermal release];
 	}
 }
 
