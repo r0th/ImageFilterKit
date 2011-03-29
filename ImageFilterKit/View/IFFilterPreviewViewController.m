@@ -60,7 +60,9 @@
 	{
 		IFSimpleTintFilter *tinter = [[IFSimpleTintFilter alloc] initWithOriginalImage:originalImage];
 		tinter.tintColor = [UIColor redColor];
-		imageView.image = [tinter imageWithFilterApplied];
+		tinter.delegate = self;
+		[tinter applyFilterOnNewThread];
+		//imageView.image = [tinter imageWithFilterApplied];
 		[tinter release];
 	}
 	else if(buttonIndex == 1)
@@ -95,6 +97,13 @@
 		imageView.image = [acid imageWithFilterApplied];
 		[acid release];
 	}
+}
+
+#pragma mark - Filter Delegate
+
+- (void) filterDidApplyWithResult:(UIImage *)result
+{
+	imageView.image = result;
 }
 
 #pragma mark - Cleanup

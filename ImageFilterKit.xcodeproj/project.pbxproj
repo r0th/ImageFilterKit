@@ -24,6 +24,7 @@
 		1F868A6C1342530B003B9488 /* IFPixelationFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A6B1342530B003B9488 /* IFPixelationFilter.m */; };
 		1F868A7813426086003B9488 /* IFGreyscaleFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A7713426086003B9488 /* IFGreyscaleFilter.m */; };
 		1F868A7B134263E1003B9488 /* IFBrightnessFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A7A134263E1003B9488 /* IFBrightnessFilter.m */; };
+		1F99EF1F13427B4F005B2C28 /* IFFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F99EF1E13427B4F005B2C28 /* IFFilterOperation.m */; };
 		1FCF963213426D620071A341 /* IFThermalFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF963113426D620071A341 /* IFThermalFilter.m */; };
 		1FCF9646134275480071A341 /* IFSnowFuzzFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF9645134275480071A341 /* IFSnowFuzzFilter.m */; };
 /* End PBXBuildFile section */
@@ -58,9 +59,11 @@
 		1F868A7713426086003B9488 /* IFGreyscaleFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFGreyscaleFilter.m; path = Filters/IFGreyscaleFilter.m; sourceTree = "<group>"; };
 		1F868A79134263E1003B9488 /* IFBrightnessFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFBrightnessFilter.h; path = Filters/IFBrightnessFilter.h; sourceTree = "<group>"; };
 		1F868A7A134263E1003B9488 /* IFBrightnessFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFBrightnessFilter.m; path = Filters/IFBrightnessFilter.m; sourceTree = "<group>"; };
+		1F99EF1D13427B4F005B2C28 /* IFFilterOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFFilterOperation.h; path = Filters/IFFilterOperation.h; sourceTree = "<group>"; };
+		1F99EF1E13427B4F005B2C28 /* IFFilterOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFFilterOperation.m; path = Filters/IFFilterOperation.m; sourceTree = "<group>"; };
 		1FCF963013426D620071A341 /* IFThermalFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFThermalFilter.h; path = Filters/IFThermalFilter.h; sourceTree = "<group>"; };
 		1FCF963113426D620071A341 /* IFThermalFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFThermalFilter.m; path = Filters/IFThermalFilter.m; sourceTree = "<group>"; };
-		1FCF9644134275480071A341 /* IFSnowFuzzFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; name = IFSnowFuzzFilter.h; path = Filters/IFSnowFuzzFilter.h; sourceTree = "<group>"; };
+		1FCF9644134275480071A341 /* IFSnowFuzzFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSnowFuzzFilter.h; path = Filters/IFSnowFuzzFilter.h; sourceTree = "<group>"; };
 		1FCF9645134275480071A341 /* IFSnowFuzzFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFSnowFuzzFilter.m; path = Filters/IFSnowFuzzFilter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +160,8 @@
 			children = (
 				1F3A029313423861000E6259 /* IFFilter.h */,
 				1F3A029413423861000E6259 /* IFFilter.m */,
+				1F99EF1D13427B4F005B2C28 /* IFFilterOperation.h */,
+				1F99EF1E13427B4F005B2C28 /* IFFilterOperation.m */,
 				1F868A56134247E0003B9488 /* IFSimpleTintFilter.h */,
 				1F868A57134247E0003B9488 /* IFSimpleTintFilter.m */,
 				1F868A7613426086003B9488 /* IFGreyscaleFilter.h */,
@@ -249,6 +254,7 @@
 				1F868A7B134263E1003B9488 /* IFBrightnessFilter.m in Sources */,
 				1FCF963213426D620071A341 /* IFThermalFilter.m in Sources */,
 				1FCF9646134275480071A341 /* IFSnowFuzzFilter.m in Sources */,
+				1F99EF1F13427B4F005B2C28 /* IFFilterOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IFFilter.h"
 
 
-@interface IFFilterPreviewViewController : UIViewController <UIActionSheetDelegate>
+@interface IFFilterPreviewViewController : UIViewController <UIActionSheetDelegate, IFFilterDelegate>
 {
     UIImage *originalImage;
 	

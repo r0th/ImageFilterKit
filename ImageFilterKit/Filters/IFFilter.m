@@ -8,11 +8,12 @@
 
 #import "IFFilter.h"
 #import "UIImage+RawData.h"
+#import "IFFilterOperation.h"
 
 
 @implementation IFFilter
 
-@synthesize originalImage;
+@synthesize originalImage, delegate;
 
 #pragma mark - Initialization
 
@@ -22,6 +23,7 @@
 	if(self)
 	{
 		self.originalImage = image;
+		operationQueue = [[NSOperationQueue alloc] init];
 	}
 	
 	return self;
@@ -39,6 +41,16 @@
 	return postProcessedImage;
 }
 
+- (void) applyFilterOnNewThread
+{
+	IFFilterOperation *operation = [[IFFilterOperation alloc] init];
+	operation.delegate = delegate;
+	operation.filter = self;
+	
+	[operationQueue addOperation:operation];
+	[operation release];
+}
+
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height
 {
 	// Do nothing in base implementation
@@ -53,6 +65,8 @@
 
 - (void) dealloc
 {
+	delegate = nil;
+	[operationQueue release];
 	[originalImage release];
 	[super dealloc];
 }

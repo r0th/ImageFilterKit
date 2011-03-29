@@ -8,17 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol IFFilterDelegate <NSObject>
+
+- (void) filterDidApplyWithResult:(UIImage *)result;
+
+@end
+
 @interface IFFilter : NSObject
 {
     UIImage *originalImage;
+	id <IFFilterDelegate> delegate;
+	NSOperationQueue *operationQueue;
 }
 
 @property (nonatomic, retain) UIImage *originalImage;
+@property (nonatomic, assign) id <IFFilterDelegate> delegate;
 
 - (id) initWithOriginalImage:(UIImage *)image;
 
-// Main method
+// Main methods
 - (UIImage *) imageWithFilterApplied;
+- (void) applyFilterOnNewThread;
 
 // Override these methods in filter implementations
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height;
