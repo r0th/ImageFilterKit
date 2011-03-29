@@ -18,6 +18,7 @@
 		1F3A0284134236BC000E6259 /* IFPhotoSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A0282134236BC000E6259 /* IFPhotoSelectionViewController.xib */; };
 		1F3A02901342381D000E6259 /* UIImage+RawData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A028F1342381D000E6259 /* UIImage+RawData.m */; };
 		1F3A029513423861000E6259 /* IFFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A029413423861000E6259 /* IFFilter.m */; };
+		1F71143E134294050007676F /* IFSaturationFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F71143D134294050007676F /* IFSaturationFilter.m */; };
 		1F868A5313423FED003B9488 /* IFFilterPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A5113423FED003B9488 /* IFFilterPreviewViewController.m */; };
 		1F868A5413423FED003B9488 /* IFFilterPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F868A5213423FED003B9488 /* IFFilterPreviewViewController.xib */; };
 		1F868A58134247E1003B9488 /* IFSimpleTintFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A57134247E0003B9488 /* IFSimpleTintFilter.m */; };
@@ -48,6 +49,8 @@
 		1F3A028F1342381D000E6259 /* UIImage+RawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RawData.m"; sourceTree = "<group>"; };
 		1F3A029313423861000E6259 /* IFFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFFilter.h; path = Filters/IFFilter.h; sourceTree = "<group>"; };
 		1F3A029413423861000E6259 /* IFFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFFilter.m; path = Filters/IFFilter.m; sourceTree = "<group>"; };
+		1F71143C134294050007676F /* IFSaturationFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSaturationFilter.h; path = Filters/IFSaturationFilter.h; sourceTree = "<group>"; };
+		1F71143D134294050007676F /* IFSaturationFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFSaturationFilter.m; path = Filters/IFSaturationFilter.m; sourceTree = "<group>"; };
 		1F868A5013423FED003B9488 /* IFFilterPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFFilterPreviewViewController.h; path = View/IFFilterPreviewViewController.h; sourceTree = "<group>"; };
 		1F868A5113423FED003B9488 /* IFFilterPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFFilterPreviewViewController.m; path = View/IFFilterPreviewViewController.m; sourceTree = "<group>"; };
 		1F868A5213423FED003B9488 /* IFFilterPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IFFilterPreviewViewController.xib; path = View/IFFilterPreviewViewController.xib; sourceTree = "<group>"; };
@@ -174,6 +177,8 @@
 				1FCF963113426D620071A341 /* IFThermalFilter.m */,
 				1FCF9644134275480071A341 /* IFSnowFuzzFilter.h */,
 				1FCF9645134275480071A341 /* IFSnowFuzzFilter.m */,
+				1F71143C134294050007676F /* IFSaturationFilter.h */,
+				1F71143D134294050007676F /* IFSaturationFilter.m */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				1FCF963213426D620071A341 /* IFThermalFilter.m in Sources */,
 				1FCF9646134275480071A341 /* IFSnowFuzzFilter.m in Sources */,
 				1F99EF1F13427B4F005B2C28 /* IFFilterOperation.m in Sources */,
+				1F71143E134294050007676F /* IFSaturationFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

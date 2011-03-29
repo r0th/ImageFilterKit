@@ -13,6 +13,7 @@
 #import "IFBrightnessFilter.h"
 #import "IFThermalFilter.h"
 #import "IFSnowFuzzFilter.h"
+#import "IFSaturationFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -31,38 +32,55 @@
 	UIBarButtonItem *openFiltersButton = [[UIBarButtonItem alloc] initWithTitle:@"Filters" style:UIBarButtonItemStyleBordered target:self action:@selector(openFilterOptions)];
 	self.navigationItem.rightBarButtonItem = openFiltersButton;
 	[openFiltersButton release];
+	
+	slider.hidden = YES;
 }
 
 #pragma mark - Button Actions
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Thermal", @"Snow Fuzz", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Thermal", @"Snow Fuzz", @"Saturation", nil];
 	[actionSheet showInView:self.view];
 	[actionSheet release];
 }
 
 - (IBAction) sliderMoved:(id)sender
 {
-	UISlider *slider = (UISlider *)sender;
-	
-	IFPixelationFilter *pixels = [[IFPixelationFilter alloc] initWithOriginalImage:originalImage];
-	pixels.pixelSize = roundf(slider.value);
-	imageView.image = [pixels imageWithFilterApplied];
-	[pixels release];
+	if(sliderMode == IFFilterPreviewSliderModePixelate)
+	{
+		IFPixelationFilter *pixels = [[IFPixelationFilter alloc] initWithOriginalImage:originalImage];
+		pixels.pixelSize = roundf(slider.value);
+		imageView.image = [pixels imageWithFilterApplied];
+		[pixels release];
+	}
+	else if(sliderMode == IFFilterPreviewSliderModeBrightness)
+	{
+		IFBrightnessFilter *brightness = [[IFBrightnessFilter alloc] initWithOriginalImage:originalImage];
+		brightness.brightnessAdjustment = roundf(slider.value);
+		imageView.image = [brightness imageWithFilterApplied];
+		[brightness release];
+	}
+	else if(sliderMode == IFFilterPreviewSliderModeSaturation)
+	{
+		IFSaturationFilter *saturation = [[IFSaturationFilter alloc] initWithOriginalImage:originalImage];
+		saturation.saturationAdjustment = roundf(slider.value);
+		imageView.image = [saturation imageWithFilterApplied];
+		[saturation release];
+	}
 }
 
 #pragma mark - Action Sheet Delegate
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+	slider.hidden = YES;
+	
 	if(buttonIndex == 0)
 	{
 		IFSimpleTintFilter *tinter = [[IFSimpleTintFilter alloc] initWithOriginalImage:originalImage];
 		tinter.tintColor = [UIColor redColor];
-		tinter.delegate = self;
-		[tinter applyFilterOnNewThread];
-		//imageView.image = [tinter imageWithFilterApplied];
+		imageView.image = [tinter imageWithFilterApplied];
 		[tinter release];
 	}
 	else if(buttonIndex == 1)
@@ -73,17 +91,21 @@
 	}
 	else if(buttonIndex == 2)
 	{
-		IFPixelationFilter *pixels = [[IFPixelationFilter alloc] initWithOriginalImage:originalImage];
-		pixels.pixelSize = 5;
-		imageView.image = [pixels imageWithFilterApplied];
-		[pixels release];
+		slider.minimumValue = 1.0;
+		slider.maximumValue = 20.0;
+		slider.value = 1.0;
+		sliderMode = IFFilterPreviewSliderModePixelate;
+		slider.hidden = NO;
+		[self sliderMoved:slider];
 	}
 	else if(buttonIndex == 3)
 	{
-		IFBrightnessFilter *brightness = [[IFBrightnessFilter alloc] initWithOriginalImage:originalImage];
-		brightness.brightnessAdjustment = 100;
-		imageView.image = [brightness imageWithFilterApplied];
-		[brightness release];
+		slider.minimumValue = -150.0;
+		slider.maximumValue = 150.0;
+		slider.value = 0.0;
+		sliderMode = IFFilterPreviewSliderModeBrightness;
+		slider.hidden = NO;
+		[self sliderMoved:slider];
 	}
 	else if(buttonIndex == 4)
 	{
@@ -93,9 +115,18 @@
 	}
 	else if(buttonIndex == 5)
 	{
-		IFSnowFuzzFilter *acid = [[IFSnowFuzzFilter alloc] initWithOriginalImage:originalImage];
-		imageView.image = [acid imageWithFilterApplied];
-		[acid release];
+		IFSnowFuzzFilter *snow = [[IFSnowFuzzFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [snow imageWithFilterApplied];
+		[snow release];
+	}
+	else if(buttonIndex == 6)
+	{
+		slider.minimumValue = -150.0;
+		slider.maximumValue = 150.0;
+		slider.value = 0.0;
+		sliderMode = IFFilterPreviewSliderModeSaturation;
+		slider.hidden = NO;
+		[self sliderMoved:slider];
 	}
 }
 

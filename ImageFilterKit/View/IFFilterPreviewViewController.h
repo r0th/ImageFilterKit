@@ -9,12 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "IFFilter.h"
 
+enum
+{
+	IFFilterPreviewSliderModePixelate = 0,
+	IFFilterPreviewSliderModeBrightness = 1,
+	IFFilterPreviewSliderModeSaturation = 2,
+} IFFilterPreviewSliderMode;
 
 @interface IFFilterPreviewViewController : UIViewController <UIActionSheetDelegate, IFFilterDelegate>
 {
     UIImage *originalImage;
 	
+	IBOutlet UISlider *slider;
 	IBOutlet UIImageView *imageView;
+	
+	int sliderMode;
 }
 
 @property (nonatomic, retain) UIImage *originalImage;
