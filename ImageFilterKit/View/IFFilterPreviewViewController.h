@@ -19,5 +19,6 @@
 @property (nonatomic, retain) UIImage *originalImage;
 
 - (void) openFilterOptions;
+- (IBAction) sliderMoved:(id)sender;
 
 @end

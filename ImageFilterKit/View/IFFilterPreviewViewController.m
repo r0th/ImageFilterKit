@@ -9,6 +9,7 @@
 #import "IFFilterPreviewViewController.h"
 #import "IFSimpleTintFilter.h"
 #import "IFGreyscaleFilter.h"
+#import "IFPixelationFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -33,9 +34,19 @@
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", nil];
 	[actionSheet showInView:self.view];
 	[actionSheet release];
+}
+
+- (IBAction) sliderMoved:(id)sender
+{
+	UISlider *slider = (UISlider *)sender;
+	
+	IFPixelationFilter *pixels = [[IFPixelationFilter alloc] initWithOriginalImage:originalImage];
+	pixels.pixelSize = roundf(slider.value);
+	imageView.image = [pixels imageWithFilterApplied];
+	[pixels release];
 }
 
 #pragma mark - Action Sheet Delegate
@@ -54,6 +65,13 @@
 		IFGreyscaleFilter *grey = [[IFGreyscaleFilter alloc] initWithOriginalImage:originalImage];
 		imageView.image = [grey imageWithFilterApplied];
 		[grey release];
+	}
+	else if(buttonIndex == 2)
+	{
+		IFPixelationFilter *pixels = [[IFPixelationFilter alloc] initWithOriginalImage:originalImage];
+		pixels.pixelSize = 5;
+		imageView.image = [pixels imageWithFilterApplied];
+		[pixels release];
 	}
 }
 
