@@ -1,0 +1,1 @@
+ImageFilterKit is a collection of image filters that can be applied to images using CoreGraphics.
