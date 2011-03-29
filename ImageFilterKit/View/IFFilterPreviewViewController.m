@@ -10,6 +10,7 @@
 #import "IFSimpleTintFilter.h"
 #import "IFGreyscaleFilter.h"
 #import "IFPixelationFilter.h"
+#import "IFBrightnessFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -34,7 +35,7 @@
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", nil];
 	[actionSheet showInView:self.view];
 	[actionSheet release];
 }
@@ -72,6 +73,13 @@
 		pixels.pixelSize = 5;
 		imageView.image = [pixels imageWithFilterApplied];
 		[pixels release];
+	}
+	else
+	{
+		IFBrightnessFilter *brightness = [[IFBrightnessFilter alloc] initWithOriginalImage:originalImage];
+		brightness.brightnessAdjustment = 100;
+		imageView.image = [brightness imageWithFilterApplied];
+		[brightness release];
 	}
 }
 
