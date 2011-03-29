@@ -8,20 +8,16 @@
 
 #import "ImageFilterKitAppDelegate.h"
 
-#import "ImageFilterKitViewController.h"
-
 @implementation ImageFilterKitAppDelegate
-
 
 @synthesize window=_window;
 
-@synthesize viewController=_viewController;
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	// Override point for customization after application launch.
-	 
-	self.window.rootViewController = self.viewController;
+	photoSelectionViewController = [[IFPhotoSelectionViewController alloc] init];
+	navigationController = [[UINavigationController alloc] initWithRootViewController:photoSelectionViewController];
+	[self.window addSubview:navigationController.view];
+	
 	[self.window makeKeyAndVisible];
     return YES;
 }
@@ -67,8 +63,9 @@
 
 - (void)dealloc
 {
+	[photoSelectionViewController release];
+	[navigationController release];
 	[_window release];
-	[_viewController release];
     [super dealloc];
 }
 

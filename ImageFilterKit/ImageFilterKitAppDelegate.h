@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class ImageFilterKitViewController;
+#import "IFPhotoSelectionViewController.h"
 
 @interface ImageFilterKitAppDelegate : NSObject <UIApplicationDelegate>
 {
-
+	UINavigationController *navigationController;
+	IFPhotoSelectionViewController *photoSelectionViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface IFPhotoSelectionViewController : UIViewController
+@interface IFPhotoSelectionViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 {
-    
+    UIImagePickerController *imagePicker;
 }
+
+- (IBAction) openCamera;
+- (IBAction) openLibrary;
 
 @end

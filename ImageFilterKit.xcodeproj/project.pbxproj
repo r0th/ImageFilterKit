@@ -16,6 +16,10 @@
 		1F3A02701342358C000E6259 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A026E1342358C000E6259 /* MainWindow.xib */; };
 		1F3A0283134236BC000E6259 /* IFPhotoSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A0281134236BC000E6259 /* IFPhotoSelectionViewController.m */; };
 		1F3A0284134236BC000E6259 /* IFPhotoSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F3A0282134236BC000E6259 /* IFPhotoSelectionViewController.xib */; };
+		1F3A02901342381D000E6259 /* UIImage+RawData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A028F1342381D000E6259 /* UIImage+RawData.m */; };
+		1F3A029513423861000E6259 /* IFFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A029413423861000E6259 /* IFFilter.m */; };
+		1F868A5313423FED003B9488 /* IFFilterPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F868A5113423FED003B9488 /* IFFilterPreviewViewController.m */; };
+		1F868A5413423FED003B9488 /* IFFilterPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F868A5213423FED003B9488 /* IFFilterPreviewViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,13 @@
 		1F3A0280134236BC000E6259 /* IFPhotoSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFPhotoSelectionViewController.h; path = View/IFPhotoSelectionViewController.h; sourceTree = "<group>"; };
 		1F3A0281134236BC000E6259 /* IFPhotoSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFPhotoSelectionViewController.m; path = View/IFPhotoSelectionViewController.m; sourceTree = "<group>"; };
 		1F3A0282134236BC000E6259 /* IFPhotoSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IFPhotoSelectionViewController.xib; path = View/IFPhotoSelectionViewController.xib; sourceTree = "<group>"; };
+		1F3A028E1342381D000E6259 /* UIImage+RawData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RawData.h"; sourceTree = "<group>"; };
+		1F3A028F1342381D000E6259 /* UIImage+RawData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RawData.m"; sourceTree = "<group>"; };
+		1F3A029313423861000E6259 /* IFFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFFilter.h; path = Filters/IFFilter.h; sourceTree = "<group>"; };
+		1F3A029413423861000E6259 /* IFFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFFilter.m; path = Filters/IFFilter.m; sourceTree = "<group>"; };
+		1F868A5013423FED003B9488 /* IFFilterPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFFilterPreviewViewController.h; path = View/IFFilterPreviewViewController.h; sourceTree = "<group>"; };
+		1F868A5113423FED003B9488 /* IFFilterPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFFilterPreviewViewController.m; path = View/IFFilterPreviewViewController.m; sourceTree = "<group>"; };
+		1F868A5213423FED003B9488 /* IFFilterPreviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IFFilterPreviewViewController.xib; path = View/IFFilterPreviewViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +90,8 @@
 		1F3A02621342358B000E6259 /* ImageFilterKit */ = {
 			isa = PBXGroup;
 			children = (
+				1F3A029213423826000E6259 /* Filters */,
+				1F3A028D1342381D000E6259 /* External */,
 				1F3A027C134235E6000E6259 /* View */,
 				1F3A026B1342358B000E6259 /* ImageFilterKitAppDelegate.h */,
 				1F3A026C1342358B000E6259 /* ImageFilterKitAppDelegate.m */,
@@ -105,8 +118,29 @@
 				1F3A0280134236BC000E6259 /* IFPhotoSelectionViewController.h */,
 				1F3A0281134236BC000E6259 /* IFPhotoSelectionViewController.m */,
 				1F3A0282134236BC000E6259 /* IFPhotoSelectionViewController.xib */,
+				1F868A5013423FED003B9488 /* IFFilterPreviewViewController.h */,
+				1F868A5113423FED003B9488 /* IFFilterPreviewViewController.m */,
+				1F868A5213423FED003B9488 /* IFFilterPreviewViewController.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		1F3A028D1342381D000E6259 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				1F3A028E1342381D000E6259 /* UIImage+RawData.h */,
+				1F3A028F1342381D000E6259 /* UIImage+RawData.m */,
+			);
+			path = External;
+			sourceTree = "<group>";
+		};
+		1F3A029213423826000E6259 /* Filters */ = {
+			isa = PBXGroup;
+			children = (
+				1F3A029313423861000E6259 /* IFFilter.h */,
+				1F3A029413423861000E6259 /* IFFilter.m */,
+			);
+			name = Filters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +196,7 @@
 				1F3A02671342358B000E6259 /* InfoPlist.strings in Resources */,
 				1F3A02701342358C000E6259 /* MainWindow.xib in Resources */,
 				1F3A0284134236BC000E6259 /* IFPhotoSelectionViewController.xib in Resources */,
+				1F868A5413423FED003B9488 /* IFFilterPreviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +210,9 @@
 				1F3A026A1342358B000E6259 /* main.m in Sources */,
 				1F3A026D1342358B000E6259 /* ImageFilterKitAppDelegate.m in Sources */,
 				1F3A0283134236BC000E6259 /* IFPhotoSelectionViewController.m in Sources */,
+				1F3A02901342381D000E6259 /* UIImage+RawData.m in Sources */,
+				1F3A029513423861000E6259 /* IFFilter.m in Sources */,
+				1F868A5313423FED003B9488 /* IFFilterPreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +317,7 @@
 				1F3A027B1342358C000E6259 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
