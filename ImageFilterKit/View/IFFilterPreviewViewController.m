@@ -19,6 +19,7 @@
 #import "IFBlurFilter.h"
 #import "IFFindEdgesFilter.h"
 #import "IFEmbossFilter.h"
+#import "IFSharpenFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -45,7 +46,7 @@
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Saturation", @"Hue", @"Thermal", @"Snow Fuzz", @"Blur", @"Find Edges", @"Emboss", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Saturation", @"Hue", @"Thermal", @"Snow Fuzz", @"Blur", @"Find Edges", @"Emboss", @"Sharpen", nil];
 	[actionSheet showInView:((ImageFilterKitAppDelegate *)[UIApplication sharedApplication].delegate).window];
 	[actionSheet release];
 }
@@ -166,6 +167,12 @@
 		IFEmbossFilter *emboss = [[IFEmbossFilter alloc] initWithOriginalImage:originalImage];
 		imageView.image = [emboss imageWithFilterApplied];
 		[emboss release];
+	}
+	else if(buttonIndex == 11)
+	{
+		IFSharpenFilter *sharpen = [[IFSharpenFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [sharpen imageWithFilterApplied];
+		[sharpen release];
 	}
 }
 

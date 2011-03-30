@@ -12,6 +12,7 @@
 		1F326E9413438FE800E8F129 /* IFBlurFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326E9313438FE800E8F129 /* IFBlurFilter.m */; };
 		1F326E97134397D900E8F129 /* IFFindEdgesFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326E96134397D800E8F129 /* IFFindEdgesFilter.m */; };
 		1F326E9A1343993A00E8F129 /* IFEmbossFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326E991343993900E8F129 /* IFEmbossFilter.m */; };
+		1F326EAC1343A19B00E8F129 /* IFSharpenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326EAB1343A19B00E8F129 /* IFSharpenFilter.m */; };
 		1F3A025D1342358B000E6259 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A025C1342358B000E6259 /* UIKit.framework */; };
 		1F3A025F1342358B000E6259 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A025E1342358B000E6259 /* Foundation.framework */; };
 		1F3A02611342358B000E6259 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A02601342358B000E6259 /* CoreGraphics.framework */; };
@@ -46,6 +47,8 @@
 		1F326E96134397D800E8F129 /* IFFindEdgesFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFFindEdgesFilter.m; path = Filters/IFFindEdgesFilter.m; sourceTree = "<group>"; };
 		1F326E981343993900E8F129 /* IFEmbossFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFEmbossFilter.h; path = Filters/IFEmbossFilter.h; sourceTree = "<group>"; };
 		1F326E991343993900E8F129 /* IFEmbossFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFEmbossFilter.m; path = Filters/IFEmbossFilter.m; sourceTree = "<group>"; };
+		1F326EAA1343A19B00E8F129 /* IFSharpenFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSharpenFilter.h; path = Filters/IFSharpenFilter.h; sourceTree = "<group>"; };
+		1F326EAB1343A19B00E8F129 /* IFSharpenFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFSharpenFilter.m; path = Filters/IFSharpenFilter.m; sourceTree = "<group>"; };
 		1F3A02581342358B000E6259 /* ImageFilterKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFilterKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3A025C1342358B000E6259 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F3A025E1342358B000E6259 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -202,6 +205,8 @@
 				1F326E96134397D800E8F129 /* IFFindEdgesFilter.m */,
 				1F326E981343993900E8F129 /* IFEmbossFilter.h */,
 				1F326E991343993900E8F129 /* IFEmbossFilter.m */,
+				1F326EAA1343A19B00E8F129 /* IFSharpenFilter.h */,
+				1F326EAB1343A19B00E8F129 /* IFSharpenFilter.m */,
 				1F326E8F134387DA00E8F129 /* IFColorConversions.c */,
 				1F326E90134387DA00E8F129 /* IFColorConversions.h */,
 			);
@@ -291,6 +296,7 @@
 				1F326E9413438FE800E8F129 /* IFBlurFilter.m in Sources */,
 				1F326E97134397D900E8F129 /* IFFindEdgesFilter.m in Sources */,
 				1F326E9A1343993A00E8F129 /* IFEmbossFilter.m in Sources */,
+				1F326EAC1343A19B00E8F129 /* IFSharpenFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
