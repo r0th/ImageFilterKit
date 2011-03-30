@@ -16,6 +16,9 @@
 #import "IFSnowFuzzFilter.h"
 #import "IFSaturationFilter.h"
 #import "IFHueFilter.h"
+#import "IFBlurFilter.h"
+#import "IFFindEdgesFilter.h"
+#import "IFEmbossFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -42,7 +45,7 @@
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Saturation", @"Hue", @"Thermal", @"Snow Fuzz", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Saturation", @"Hue", @"Thermal", @"Snow Fuzz", @"Blur", @"Find Edges", @"Emboss", nil];
 	[actionSheet showInView:((ImageFilterKitAppDelegate *)[UIApplication sharedApplication].delegate).window];
 	[actionSheet release];
 }
@@ -145,6 +148,24 @@
 		IFSnowFuzzFilter *snow = [[IFSnowFuzzFilter alloc] initWithOriginalImage:originalImage];
 		imageView.image = [snow imageWithFilterApplied];
 		[snow release];
+	}
+	else if(buttonIndex == 8)
+	{
+		IFBlurFilter *blur = [[IFBlurFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [blur imageWithFilterApplied];
+		[blur release];
+	}
+	else if(buttonIndex == 9)
+	{
+		IFFindEdgesFilter *edges = [[IFFindEdgesFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [edges imageWithFilterApplied];
+		[edges release];
+	}
+	else if(buttonIndex == 10)
+	{
+		IFEmbossFilter *emboss = [[IFEmbossFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [emboss imageWithFilterApplied];
+		[emboss release];
 	}
 }
 
