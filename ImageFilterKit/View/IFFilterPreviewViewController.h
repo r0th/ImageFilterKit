@@ -14,6 +14,7 @@ enum
 	IFFilterPreviewSliderModePixelate = 0,
 	IFFilterPreviewSliderModeBrightness = 1,
 	IFFilterPreviewSliderModeSaturation = 2,
+	IFFilterPreviewSliderModeHue = 3
 } IFFilterPreviewSliderMode;
 
 @interface IFFilterPreviewViewController : UIViewController <UIActionSheetDelegate, IFFilterDelegate>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F326E8E1343879B00E8F129 /* IFHueFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326E8D1343879B00E8F129 /* IFHueFilter.m */; };
+		1F326E91134387DA00E8F129 /* IFColorConversions.c in Sources */ = {isa = PBXBuildFile; fileRef = 1F326E8F134387DA00E8F129 /* IFColorConversions.c */; };
 		1F3A025D1342358B000E6259 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A025C1342358B000E6259 /* UIKit.framework */; };
 		1F3A025F1342358B000E6259 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A025E1342358B000E6259 /* Foundation.framework */; };
 		1F3A02611342358B000E6259 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A02601342358B000E6259 /* CoreGraphics.framework */; };
@@ -31,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F326E8C1343879B00E8F129 /* IFHueFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFHueFilter.h; path = Filters/IFHueFilter.h; sourceTree = "<group>"; };
+		1F326E8D1343879B00E8F129 /* IFHueFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFHueFilter.m; path = Filters/IFHueFilter.m; sourceTree = "<group>"; };
+		1F326E8F134387DA00E8F129 /* IFColorConversions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IFColorConversions.c; path = Filters/IFColorConversions.c; sourceTree = "<group>"; };
+		1F326E90134387DA00E8F129 /* IFColorConversions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFColorConversions.h; path = Filters/IFColorConversions.h; sourceTree = "<group>"; };
 		1F3A02581342358B000E6259 /* ImageFilterKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFilterKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3A025C1342358B000E6259 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F3A025E1342358B000E6259 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -173,12 +179,16 @@
 				1F868A6B1342530B003B9488 /* IFPixelationFilter.m */,
 				1F868A79134263E1003B9488 /* IFBrightnessFilter.h */,
 				1F868A7A134263E1003B9488 /* IFBrightnessFilter.m */,
+				1F71143C134294050007676F /* IFSaturationFilter.h */,
+				1F71143D134294050007676F /* IFSaturationFilter.m */,
+				1F326E8C1343879B00E8F129 /* IFHueFilter.h */,
+				1F326E8D1343879B00E8F129 /* IFHueFilter.m */,
 				1FCF963013426D620071A341 /* IFThermalFilter.h */,
 				1FCF963113426D620071A341 /* IFThermalFilter.m */,
 				1FCF9644134275480071A341 /* IFSnowFuzzFilter.h */,
 				1FCF9645134275480071A341 /* IFSnowFuzzFilter.m */,
-				1F71143C134294050007676F /* IFSaturationFilter.h */,
-				1F71143D134294050007676F /* IFSaturationFilter.m */,
+				1F326E8F134387DA00E8F129 /* IFColorConversions.c */,
+				1F326E90134387DA00E8F129 /* IFColorConversions.h */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -261,6 +271,8 @@
 				1FCF9646134275480071A341 /* IFSnowFuzzFilter.m in Sources */,
 				1F99EF1F13427B4F005B2C28 /* IFFilterOperation.m in Sources */,
 				1F71143E134294050007676F /* IFSaturationFilter.m in Sources */,
+				1F326E8E1343879B00E8F129 /* IFHueFilter.m in Sources */,
+				1F326E91134387DA00E8F129 /* IFColorConversions.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

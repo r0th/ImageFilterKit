@@ -1,28 +1,30 @@
 //
-//  IFBrightnessFilter.m
+//  IFHueFilter.m
 //  ImageFilterKit
 //
-//  Created by Andy Roth on 3/29/11.
+//  Created by Andy Roth on 3/30/11.
 //  Copyright 2011 Resource Interactive. All rights reserved.
 //
 
-#import "IFBrightnessFilter.h"
+#import "IFHueFilter.h"
 #import "IFColorConversions.h"
 
 
-@implementation IFBrightnessFilter
+@implementation IFHueFilter
 
-@synthesize brightnessAdjustment;
+@synthesize hueAdjustment;
 
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height
-{
+{	
 	for(int i=0; i < length; i+=4)
 	{
-		// HSL works better for lightness than HSV
 		IFColorRGB rgb = IFColorRGBMake(bytes[i+1], bytes[i+2], bytes[i+3]);
 		IFColorHSL hsl = IFConvertRGBToHSL(rgb);
 		
-		hsl.l = MIN(MAX(0, hsl.l + brightnessAdjustment), 255);
+		hsl.h = hsl.h + hueAdjustment;
+		
+		if(hsl.h > 360) hsl.h = hsl.h - 360;
+		if(hsl.h < 0) hsl.h = hsl.h + 360;
 		
 		rgb = IFConvertHSLToRGB(hsl);
 		

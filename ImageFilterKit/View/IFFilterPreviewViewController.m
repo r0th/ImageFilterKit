@@ -7,6 +7,7 @@
 //
 
 #import "IFFilterPreviewViewController.h"
+#import "ImageFilterKitAppDelegate.h"
 #import "IFSimpleTintFilter.h"
 #import "IFGreyscaleFilter.h"
 #import "IFPixelationFilter.h"
@@ -14,6 +15,7 @@
 #import "IFThermalFilter.h"
 #import "IFSnowFuzzFilter.h"
 #import "IFSaturationFilter.h"
+#import "IFHueFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -40,8 +42,8 @@
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Thermal", @"Snow Fuzz", @"Saturation", nil];
-	[actionSheet showInView:self.view];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Saturation", @"Hue", @"Thermal", @"Snow Fuzz", nil];
+	[actionSheet showInView:((ImageFilterKitAppDelegate *)[UIApplication sharedApplication].delegate).window];
 	[actionSheet release];
 }
 
@@ -67,6 +69,14 @@
 		saturation.saturationAdjustment = roundf(slider.value);
 		imageView.image = [saturation imageWithFilterApplied];
 		[saturation release];
+	}
+	
+	else if(sliderMode == IFFilterPreviewSliderModeHue)
+	{
+		IFHueFilter *hue = [[IFHueFilter alloc] initWithOriginalImage:originalImage];
+		hue.hueAdjustment = roundf(slider.value);
+		imageView.image = [hue imageWithFilterApplied];
+		[hue release];
 	}
 }
 
@@ -109,24 +119,32 @@
 	}
 	else if(buttonIndex == 4)
 	{
-		IFThermalFilter *thermal = [[IFThermalFilter alloc] initWithOriginalImage:originalImage];
-		imageView.image = [thermal imageWithFilterApplied];
-		[thermal release];
-	}
-	else if(buttonIndex == 5)
-	{
-		IFSnowFuzzFilter *snow = [[IFSnowFuzzFilter alloc] initWithOriginalImage:originalImage];
-		imageView.image = [snow imageWithFilterApplied];
-		[snow release];
-	}
-	else if(buttonIndex == 6)
-	{
 		slider.minimumValue = -150.0;
 		slider.maximumValue = 150.0;
 		slider.value = 0.0;
 		sliderMode = IFFilterPreviewSliderModeSaturation;
 		slider.hidden = NO;
 		[self sliderMoved:slider];
+	}
+	else if(buttonIndex == 5)
+	{
+		slider.minimumValue = 0;
+		slider.maximumValue = 360.0;
+		slider.value = 0.0;
+		sliderMode = IFFilterPreviewSliderModeHue;
+		slider.hidden = NO;
+	}
+	else if(buttonIndex == 6)
+	{
+		IFThermalFilter *thermal = [[IFThermalFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [thermal imageWithFilterApplied];
+		[thermal release];
+	}
+	else if(buttonIndex == 7)
+	{
+		IFSnowFuzzFilter *snow = [[IFSnowFuzzFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [snow imageWithFilterApplied];
+		[snow release];
 	}
 }
 

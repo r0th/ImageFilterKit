@@ -7,6 +7,7 @@
 //
 
 #import "IFSaturationFilter.h"
+#import "IFColorConversions.h"
 
 
 @implementation IFSaturationFilter
@@ -15,25 +16,19 @@
 
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height
 {
-	int r, g, b;
 	for(int i=0; i < length; i+=4)
 	{
-		r = bytes[i+1];
-		g = bytes[i+2];
-		b = bytes[i+3];
+		// Use the HSV color model, it works better with saturation than HSL
+		IFColorRGB rgb = IFColorRGBMake(bytes[i+1], bytes[i+2], bytes[i+3]);
+		IFColorHSV hsv = IFConvertRGBToHSV(rgb);
 		
-		if(r > g && r > b)
-		{
-			bytes[i+1] = MIN(MAX(0, bytes[i+1] + saturationAdjustment), 255);
-		}
-		else if(g > r && g > b)
-		{
-			bytes[i+2] = MIN(MAX(0, bytes[i+2] + saturationAdjustment), 255);
-		}
-		else if(b > r && b > g)
-		{
-			bytes[i+3] = MIN(MAX(0, bytes[i+3] + saturationAdjustment), 255);
-		}
+		hsv.s = MIN(MAX(0, hsv.s + saturationAdjustment), 255);
+		
+		rgb = IFConvertHSVToRGB(hsv);
+		
+		bytes[i+1] = rgb.r;
+		bytes[i+2] = rgb.g;
+		bytes[i+3] = rgb.b;
 	}
 }
 
