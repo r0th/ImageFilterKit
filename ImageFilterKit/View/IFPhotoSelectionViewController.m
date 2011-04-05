@@ -8,6 +8,7 @@
 
 #import "IFPhotoSelectionViewController.h"
 #import "IFFilterPreviewViewController.h"
+#import "UIImage+Resize.h"
 
 
 @implementation IFPhotoSelectionViewController
@@ -44,9 +45,10 @@
 	[self dismissModalViewControllerAnimated:YES];
 	
 	UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
+	UIImage *smallImage = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFit bounds:CGSizeMake(320, 480) interpolationQuality:kCGInterpolationDefault];
 	
 	IFFilterPreviewViewController *preview = [[IFFilterPreviewViewController alloc] init];
-	preview.originalImage = image;
+	preview.originalImage = smallImage;
 	[self.navigationController pushViewController:preview animated:YES];
 	[preview release];
 }

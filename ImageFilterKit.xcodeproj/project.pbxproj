@@ -13,6 +13,9 @@
 		1F326E97134397D900E8F129 /* IFFindEdgesFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326E96134397D800E8F129 /* IFFindEdgesFilter.m */; };
 		1F326E9A1343993A00E8F129 /* IFEmbossFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326E991343993900E8F129 /* IFEmbossFilter.m */; };
 		1F326EAC1343A19B00E8F129 /* IFSharpenFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326EAB1343A19B00E8F129 /* IFSharpenFilter.m */; };
+		1F326F651343E42D00E8F129 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326F641343E42D00E8F129 /* UIImage+Resize.m */; };
+		1F326F6B1343E44700E8F129 /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326F681343E44700E8F129 /* UIImage+Alpha.m */; };
+		1F326F6C1343E44700E8F129 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F326F6A1343E44700E8F129 /* UIImage+RoundedCorner.m */; };
 		1F3A025D1342358B000E6259 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A025C1342358B000E6259 /* UIKit.framework */; };
 		1F3A025F1342358B000E6259 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A025E1342358B000E6259 /* Foundation.framework */; };
 		1F3A02611342358B000E6259 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F3A02601342358B000E6259 /* CoreGraphics.framework */; };
@@ -49,6 +52,12 @@
 		1F326E991343993900E8F129 /* IFEmbossFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFEmbossFilter.m; path = Filters/IFEmbossFilter.m; sourceTree = "<group>"; };
 		1F326EAA1343A19B00E8F129 /* IFSharpenFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSharpenFilter.h; path = Filters/IFSharpenFilter.h; sourceTree = "<group>"; };
 		1F326EAB1343A19B00E8F129 /* IFSharpenFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFSharpenFilter.m; path = Filters/IFSharpenFilter.m; sourceTree = "<group>"; };
+		1F326F631343E42D00E8F129 /* UIImage+Resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Resize.h"; sourceTree = "<group>"; };
+		1F326F641343E42D00E8F129 /* UIImage+Resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Resize.m"; sourceTree = "<group>"; };
+		1F326F671343E44700E8F129 /* UIImage+Alpha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Alpha.h"; sourceTree = "<group>"; };
+		1F326F681343E44700E8F129 /* UIImage+Alpha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Alpha.m"; sourceTree = "<group>"; };
+		1F326F691343E44700E8F129 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		1F326F6A1343E44700E8F129 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		1F3A02581342358B000E6259 /* ImageFilterKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageFilterKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3A025C1342358B000E6259 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1F3A025E1342358B000E6259 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,6 +181,12 @@
 			children = (
 				1F3A028E1342381D000E6259 /* UIImage+RawData.h */,
 				1F3A028F1342381D000E6259 /* UIImage+RawData.m */,
+				1F326F631343E42D00E8F129 /* UIImage+Resize.h */,
+				1F326F641343E42D00E8F129 /* UIImage+Resize.m */,
+				1F326F671343E44700E8F129 /* UIImage+Alpha.h */,
+				1F326F681343E44700E8F129 /* UIImage+Alpha.m */,
+				1F326F691343E44700E8F129 /* UIImage+RoundedCorner.h */,
+				1F326F6A1343E44700E8F129 /* UIImage+RoundedCorner.m */,
 			);
 			path = External;
 			sourceTree = "<group>";
@@ -207,8 +222,8 @@
 				1F326E991343993900E8F129 /* IFEmbossFilter.m */,
 				1F326EAA1343A19B00E8F129 /* IFSharpenFilter.h */,
 				1F326EAB1343A19B00E8F129 /* IFSharpenFilter.m */,
-				1F326E8F134387DA00E8F129 /* IFColorConversions.c */,
 				1F326E90134387DA00E8F129 /* IFColorConversions.h */,
+				1F326E8F134387DA00E8F129 /* IFColorConversions.c */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -297,6 +312,9 @@
 				1F326E97134397D900E8F129 /* IFFindEdgesFilter.m in Sources */,
 				1F326E9A1343993A00E8F129 /* IFEmbossFilter.m in Sources */,
 				1F326EAC1343A19B00E8F129 /* IFSharpenFilter.m in Sources */,
+				1F326F651343E42D00E8F129 /* UIImage+Resize.m in Sources */,
+				1F326F6B1343E44700E8F129 /* UIImage+Alpha.m in Sources */,
+				1F326F6C1343E44700E8F129 /* UIImage+RoundedCorner.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +380,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageFilterKit/ImageFilterKit-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ImageFilterKit/ImageFilterKit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -375,6 +394,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ImageFilterKit/ImageFilterKit-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "ImageFilterKit/ImageFilterKit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
