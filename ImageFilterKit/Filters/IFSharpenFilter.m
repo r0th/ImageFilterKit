@@ -17,12 +17,12 @@
 
 double sharpenFilter[filterWidth][filterHeight] =
 {
-    -1, -1, -1,
-    -1,  9, -1,
-    -1, -1, -1
+    0, -2, 0,
+    -2, 11, -2,
+    0, -2, 0
 };
 
-double sharpenFactor = 1.0;
+double sharpenFactor = 1.0 / 3.0;
 double sharpenBias = 0.0;
 
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height

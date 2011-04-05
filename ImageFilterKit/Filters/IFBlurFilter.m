@@ -18,13 +18,13 @@
 double blurFilter[filterWidth][filterHeight] =
 {
     0, 0, 1, 0, 0,
-    0, 1, 1, 1, 0,
-    1, 1, 1, 1, 1,
-    0, 1, 1, 1, 0,
+    0, 1, 2, 1, 0,
+    1, 2, 3, 2, 1,
+    0, 1, 2, 1, 0,
     0, 0, 1, 0, 0,
 };
 
-double blurFactor = 1.0 / 13.0; // The number of 1s in the matrix to make them all add up to 1.
+double blurFactor = 1.0 / 19.0; // The number of 1s in the matrix to make them all add up to 1.
 double blurBias = 0.0;
 
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height

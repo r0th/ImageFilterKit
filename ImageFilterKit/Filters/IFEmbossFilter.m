@@ -17,13 +17,13 @@
 
 double embossFilter[filterWidth][filterHeight] =
 {
-    -1, -1,  0,
-    -1,  0,  1,
-	0,  1,  1
+    -1, 0, -1,
+    0, 4, 0,
+	-1, 0, -1
 };
 
 double embossFactor = 1.0;
-double embossBias = 128.0;
+double embossBias = 127.0;
 
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height
 {

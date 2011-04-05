@@ -14,15 +14,26 @@
 #define filterWidth 3
 #define filterHeight 3
 
+// Find edges in all directions
+/*
 double edgesFilter[filterWidth][filterHeight] =
 {
-    1,  1,  1,
-	1, -7,  1,
-	1,  1,  1
+    1, 1, 1,
+	1, -7, 1,
+	1, 1, 1
+};
+*/
+
+// Note: There are a number of different edge detection matrices we can use here.
+double edgesFilter[filterWidth][filterHeight] =
+{
+    1, 1, 1,
+	0, 0, 0,
+	-1, -1, -1
 };
 
 double edgesFactor = 1.0;
-double edgesBias = 0.0;
+double edgesBias = 127.0;
 
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height
 {
