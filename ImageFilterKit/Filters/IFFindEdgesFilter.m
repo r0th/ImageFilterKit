@@ -26,8 +26,11 @@ double edgesBias = 0.0;
 
 - (void) manipulateRawBytes:(UInt8 *)bytes length:(int)length width:(int)width height:(int)height
 {
-	IFColorRGB image[width][height]; 
-	IFColorRGB result[width][height];
+	static IFColorRGB image[2000][2000]; 
+	static IFColorRGB result[2000][2000];
+	
+	if(width > 2000) width = 2000;
+	if(height > 2000) height = 2000;
 	
 	// Set the RGB values for the image matrix
 	for(int x = 0; x < width; x++)
