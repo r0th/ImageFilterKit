@@ -45,7 +45,7 @@
 	[self dismissModalViewControllerAnimated:YES];
 	
 	UIImage *image = [info objectForKey:UIImagePickerControllerEditedImage];
-	UIImage *smallImage = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFit bounds:CGSizeMake(320, 480) interpolationQuality:kCGInterpolationDefault];
+	UIImage *smallImage = [image resizedImageWithContentMode:UIViewContentModeScaleAspectFit bounds:CGSizeMake(640, 960) interpolationQuality:kCGInterpolationDefault];
 	
 	IFFilterPreviewViewController *preview = [[IFFilterPreviewViewController alloc] init];
 	preview.originalImage = smallImage;
