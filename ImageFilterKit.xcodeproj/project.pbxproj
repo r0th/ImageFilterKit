@@ -37,6 +37,7 @@
 		1F99EF1F13427B4F005B2C28 /* IFFilterOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F99EF1E13427B4F005B2C28 /* IFFilterOperation.m */; };
 		1FCF963213426D620071A341 /* IFThermalFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF963113426D620071A341 /* IFThermalFilter.m */; };
 		1FCF9646134275480071A341 /* IFSnowFuzzFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FCF9645134275480071A341 /* IFSnowFuzzFilter.m */; };
+		1FE8E042134CC0A700BAC389 /* IFTiltShiftFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FE8E041134CC0A700BAC389 /* IFTiltShiftFilter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,8 @@
 		1FCF963113426D620071A341 /* IFThermalFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFThermalFilter.m; path = Filters/IFThermalFilter.m; sourceTree = "<group>"; };
 		1FCF9644134275480071A341 /* IFSnowFuzzFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFSnowFuzzFilter.h; path = Filters/IFSnowFuzzFilter.h; sourceTree = "<group>"; };
 		1FCF9645134275480071A341 /* IFSnowFuzzFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFSnowFuzzFilter.m; path = Filters/IFSnowFuzzFilter.m; sourceTree = "<group>"; };
+		1FE8E040134CC0A700BAC389 /* IFTiltShiftFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IFTiltShiftFilter.h; path = Filters/IFTiltShiftFilter.h; sourceTree = "<group>"; };
+		1FE8E041134CC0A700BAC389 /* IFTiltShiftFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IFTiltShiftFilter.m; path = Filters/IFTiltShiftFilter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +225,8 @@
 				1F326E991343993900E8F129 /* IFEmbossFilter.m */,
 				1F326EAA1343A19B00E8F129 /* IFSharpenFilter.h */,
 				1F326EAB1343A19B00E8F129 /* IFSharpenFilter.m */,
+				1FE8E040134CC0A700BAC389 /* IFTiltShiftFilter.h */,
+				1FE8E041134CC0A700BAC389 /* IFTiltShiftFilter.m */,
 				1F326E90134387DA00E8F129 /* IFColorConversions.h */,
 				1F326E8F134387DA00E8F129 /* IFColorConversions.c */,
 			);
@@ -315,6 +320,7 @@
 				1F326F651343E42D00E8F129 /* UIImage+Resize.m in Sources */,
 				1F326F6B1343E44700E8F129 /* UIImage+Alpha.m in Sources */,
 				1F326F6C1343E44700E8F129 /* UIImage+RoundedCorner.m in Sources */,
+				1FE8E042134CC0A700BAC389 /* IFTiltShiftFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

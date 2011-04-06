@@ -20,6 +20,7 @@
 #import "IFFindEdgesFilter.h"
 #import "IFEmbossFilter.h"
 #import "IFSharpenFilter.h"
+#import "IFTiltShiftFilter.h"
 
 
 @implementation IFFilterPreviewViewController
@@ -46,7 +47,7 @@
 
 - (void) openFilterOptions
 {
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Saturation", @"Hue", @"Thermal", @"Snow Fuzz", @"Blur", @"Find Edges", @"Emboss", @"Sharpen", nil];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Tint Red", @"Greyscale", @"Pixelate", @"Brightness", @"Saturation", @"Hue", @"Thermal", @"Snow Fuzz", @"Blur", @"Find Edges", @"Emboss", @"Sharpen", @"Tilt Shift", nil];
 	[actionSheet showInView:((ImageFilterKitAppDelegate *)[UIApplication sharedApplication].delegate).window];
 	[actionSheet release];
 }
@@ -173,6 +174,12 @@
 		IFSharpenFilter *sharpen = [[IFSharpenFilter alloc] initWithOriginalImage:originalImage];
 		imageView.image = [sharpen imageWithFilterApplied];
 		[sharpen release];
+	}
+	else if(buttonIndex == 12)
+	{
+		IFTiltShiftFilter *tilt = [[IFTiltShiftFilter alloc] initWithOriginalImage:originalImage];
+		imageView.image = [tilt imageWithFilterApplied];
+		[tilt release];
 	}
 }
 
