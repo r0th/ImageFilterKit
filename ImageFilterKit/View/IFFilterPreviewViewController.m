@@ -177,8 +177,12 @@
 	}
 	else if(buttonIndex == 12)
 	{
+		activityView.hidden = NO;
+		
 		IFTiltShiftFilter *tilt = [[IFTiltShiftFilter alloc] initWithOriginalImage:originalImage];
-		imageView.image = [tilt imageWithFilterApplied];
+		tilt.delegate = self;
+		//imageView.image = [tilt imageWithFilterApplied];
+		[tilt applyFilterOnNewThread];
 		[tilt release];
 	}
 }
@@ -187,6 +191,7 @@
 
 - (void) filterDidApplyWithResult:(UIImage *)result
 {
+	activityView.hidden = YES;
 	imageView.image = result;
 }
 

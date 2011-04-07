@@ -15,7 +15,8 @@
 
 - (void)main
 {
-	[delegate filterDidApplyWithResult:[filter imageWithFilterApplied]];
+	UIImage *image = [filter imageWithFilterApplied];
+	[delegate performSelectorOnMainThread:@selector(filterDidApplyWithResult:) withObject:image waitUntilDone:NO];
 }
 
 - (void) dealloc

@@ -13,10 +13,10 @@
 @interface IFFilterOperation : NSOperation
 {
     IFFilter *filter;
-	id <IFFilterDelegate> delegate;
+	NSObject <IFFilterDelegate> *delegate;
 }
 
 @property (nonatomic, retain) IFFilter *filter;
-@property (nonatomic, assign) id <IFFilterDelegate> delegate;
+@property (nonatomic, assign) NSObject <IFFilterDelegate> *delegate;
 
 @end

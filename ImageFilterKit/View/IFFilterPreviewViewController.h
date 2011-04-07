@@ -23,6 +23,7 @@ enum
 	
 	IBOutlet UISlider *slider;
 	IBOutlet UIImageView *imageView;
+	IBOutlet UIView *activityView;
 	
 	int sliderMode;
 }
