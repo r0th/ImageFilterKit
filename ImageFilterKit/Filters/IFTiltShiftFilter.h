@@ -3,7 +3,7 @@
 //  ImageFilterKit
 //
 //  Created by Andy Roth on 4/6/11.
-//  Copyright 2011 Resource Interactive. All rights reserved.
+//  Copyright 2011 Roozy. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

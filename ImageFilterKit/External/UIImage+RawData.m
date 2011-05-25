@@ -1,9 +1,9 @@
 //
 //  UIImage+RawData.m
-//  MaskingPrototype
+//  ImageFilterKit
 //
 //  Created by Andy Roth on 3/7/11.
-//  Copyright 2011 Resource Interactive. All rights reserved.
+//  Copyright 2011 Roozy. All rights reserved.
 //
 
 #import "UIImage+RawData.h"

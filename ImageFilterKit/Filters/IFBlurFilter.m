@@ -3,7 +3,7 @@
 //  ImageFilterKit
 //
 //  Created by Andy Roth on 3/30/11.
-//  Copyright 2011 Resource Interactive. All rights reserved.
+//  Copyright 2011 Roozy. All rights reserved.
 //
 
 #import "IFBlurFilter.h"
